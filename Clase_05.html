@@ -178,15 +178,15 @@
 </section>
 <section class="slide level2">
 
-<p><strong>Teorema 2.3:</strong> Si <span class="math inline">\(\lim\limits_{n \to +\infty} \mathrm{MSE}(\hat{\theta})=0\)</span> entonces <span class="math inline">\(\hat{\theta}\)</span> es consistente para estimar <span class="math inline">\(\theta\)</span>.</p>
+<p><strong>Teorema 2.3:</strong> Si <span class="math inline">\(\lim\limits_{n \to +\infty} \mathrm{ECM}(\hat{\theta})=0\)</span> entonces <span class="math inline">\(\hat{\theta}\)</span> es consistente para estimar <span class="math inline">\(\theta\)</span>.</p>
 <p><strong>Prueba:</strong></p>
 <p>La <em>Desigualdad de Markov</em> establece que si <span class="math inline">\(X\)</span> es una v.a. tal que <span class="math inline">\(\operatorname{Pr}(X \geq 0)=1\)</span>. Entonces para cada número real <span class="math inline">\(t&gt;0\)</span>, se tiene que</p>
 <span class="math display">\[\begin{equation}
 \operatorname{Pr}(X \geq t) \leq \frac{E(X)}{t}.
 \end{equation}\]</span>
 <p>Tome <span class="math inline">\(X=|\hat{\theta}-\theta|^2\)</span>. Si <span class="math inline">\(\hat{\theta}\)</span> es una v.a. que cumple que <span class="math inline">\(\operatorname{Var}(\hat{\theta})\)</span> existe. Entonces para cada <span class="math inline">\(\varepsilon&gt;0\)</span></p>
-<p><span class="math display">\[\operatorname{P}(|\hat{\theta}-\theta| \geq \varepsilon) = \operatorname{P}(|\hat{\theta}-\theta|^2 \geq \varepsilon^2)  \leq  \frac{\mathbb{E}[(\hat{\theta}-\theta)^2]}{\varepsilon^2}=\frac{\operatorname{MSE}(\hat{\theta})}{\varepsilon^{2}}.\]</span> Finalmente, se tiene que</p>
-<p><span class="math display">\[\lim_{n \to +\infty}\operatorname{P}(|\hat{\theta}-\theta| \geq \varepsilon) \leq  \frac{1}{\varepsilon^{2}} \cdot \lim_{n\to\infty}\operatorname{MSE}(\hat{\theta})=\frac{1}{\varepsilon^{2}} \cdot 0=0.\]</span></p>
+<p><span class="math display">\[\operatorname{P}(|\hat{\theta}-\theta| \geq \varepsilon) = \operatorname{P}(|\hat{\theta}-\theta|^2 \geq \varepsilon^2)  \leq  \frac{\mathbb{E}[(\hat{\theta}-\theta)^2]}{\varepsilon^2}=\frac{\operatorname{ECM}(\hat{\theta})}{\varepsilon^{2}}.\]</span> Finalmente, se tiene que</p>
+<p><span class="math display">\[\lim_{n \to +\infty}\operatorname{P}(|\hat{\theta}-\theta| \geq \varepsilon) \leq  \frac{1}{\varepsilon^{2}} \cdot \lim_{n\to\infty}\operatorname{ECM}(\hat{\theta})=\frac{1}{\varepsilon^{2}} \cdot 0=0.\]</span></p>
 </section>
 <section id="consistencia-con-estimadores-insesgados" class="slide level2">
 <h2>Consistencia con estimadores insesgados</h2>
@@ -212,8 +212,8 @@
 
 <p><strong>OJO:</strong> ¿ El estadístico <span class="math inline">\(X_{(n)}\)</span> es consistente?</p>
 <p><strong>Respuesta:</strong> Si, pero es sesgado.</p>
-<p><span class="math display">\[B(X_{(n)}) =  \frac{n\theta }{n+1} - \theta\]</span> <span class="math display">\[Var(X_{(n)}) = \frac{n }{n+2}\theta^2 - \frac{n^2}{(n+1)^2} \theta^2 \]</span></p>
-<p><strong>Tarea:</strong> Pruebe que <span class="math inline">\(\displaystyle \lim_{n \to +\infty} \operatorname{MSE}(X_{(n)})=0\)</span></p>
+<p><span class="math display">\[B(X_{(n)}) =  \frac{n\theta }{n+1} - \theta\]</span> <span class="math display">\[Var(X_{(n)}) = E\left(X_{(n)}^2\right) - E\left(X_{(n)}\right)^2  = \frac{n }{n+2}\theta^2 - \frac{n^2}{(n+1)^2} \theta^2 \]</span></p>
+<p><strong>Tarea:</strong> Pruebe que <span class="math inline">\(\displaystyle \lim_{n \to +\infty} \operatorname{ECM}(X_{(n)})=0\)</span></p>
 </section>
 <section class="slide level2">
 
